@@ -1,5 +1,9 @@
 from src.struct.tree import Node
 
+## If we're to use this method, we must make its
+## execution explicit. (perhaps using explicit type
+## on each class construction.)
+
 def construct_node(name, __type__, __db__):
 
     def __init__(s, parent, name, data):
