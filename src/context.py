@@ -9,7 +9,7 @@ class Context(object):
         self._connection = connect(database, name, config).connection
         with self._connection as conn:
             self._columns =\
-                    read_sql("select * from information_schema.columns",conn)
+                    read_sql("select * from information_schema.columns",conn) ## V 
 
-        Column, Table, Schema, Database = construct_db_nodes()
+        _, _, _, Database = construct_db_nodes() ## construct conditioned on database implementation
         self._tree = Tree(); self._tree.construct(Database, self._columns)
