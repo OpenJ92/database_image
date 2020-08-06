@@ -1,6 +1,6 @@
 from src.connect.dispatcher import connect
 from src.struct.tree import Tree
-from src.objects.nodes import construct_db_nodes
+from src.objects.dynamicnodes import __construct_nodes__
 
 from pandas import read_sql
 
@@ -11,5 +11,6 @@ class Context(object):
             self._columns =\
                     read_sql("select * from information_schema.columns",conn) ## V 
 
-        _, _, _, Database = construct_db_nodes() ## construct conditioned on database implementation
+        db_config = {'column':'column_name','table':'table_name','schema':'table_schema'}
+        _, _, _, Database = __construct_nodes__(db_config) ## construct conditioned on database implementation
         self._tree = Tree(); self._tree.construct(Database, self._columns)

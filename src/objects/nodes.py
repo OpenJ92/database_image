@@ -17,6 +17,7 @@ def construct_node(name, __type__, __db__):
 
     return type(name, (Node,), attrs)
 
+
 def construct_db_nodes():
     class Column(Node):
         def __init__(self, parent, name, data):
