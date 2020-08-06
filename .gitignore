@@ -1,4 +1,0 @@
-tags
-.config.*
-src/**/__pycache__/*
-src/**/*.swp
