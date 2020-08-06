@@ -5,9 +5,8 @@ def __construct_nodes__(__db__):
     def __co_init__(_construct_children):
         def __init__(self, parent, name, data):
             Node.__init__(self, parent, name)
-            self._children = data if not _construct_children else _construct_children(data)
+            self._children = data.to_dict('list') if not _construct_children else _construct_children(data)
         return __init__
-
 
     cconst = None
     Column = type('Column', (Node,), {'__init__':__co_init__(cconst),'_construct_children':cconst})

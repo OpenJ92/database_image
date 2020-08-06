@@ -12,5 +12,5 @@ class Context(object):
                     read_sql("select * from information_schema.columns",conn) ## V 
 
         db_config = {'column':'column_name','table':'table_name','schema':'table_schema'}
-        _, _, _, Database = __construct_nodes__(db_config) ## construct conditioned on database implementation
+        _, _, _, Database = __construct_nodes__(db_config)
         self._tree = Tree(); self._tree.construct(Database, self._columns)

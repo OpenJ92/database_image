@@ -13,6 +13,10 @@ class Node(object):
     def __getitem__(self, item):
         return self._children[item]
 
+    def __iter__(self):
+        for col, con in self._children.items():
+            yield col, con
+
     def __construct_children__(self, __type__, __db__):
         def _construct_children(data):
             unique_children = data[__db__].unique()
@@ -35,6 +39,7 @@ class Node(object):
                         :
                         __type__(self, elmt, data[data[__db__] == elmt])
                         for elmt in unique_children
+                        ## if elmt in __db__['restrict']
                     }
         return _construct_children
 
