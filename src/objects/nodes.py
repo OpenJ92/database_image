@@ -25,6 +25,6 @@ def construct_db_nodes():
 
     Table = construct_node('Table',Column,'column_name')
     Schema = construct_node('Schema',Table,'table_name')
-    Database = construct_node('Database',Schema,'schema_name')
+    Database = construct_node('Database',Schema,'table_schema')
 
     return Column, Table, Schema, Database
