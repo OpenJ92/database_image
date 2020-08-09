@@ -10,8 +10,8 @@ class Context(object):
 
         with self._connection as conn:
             self._columns =\
-                    read_sql("select * from information_schema.columns",conn) ## V 
+                    read_sql(self._connection.db_information_schema_columns,conn)
 
-        db_config = {'column':'column_name','table':'table_name','schema':'table_schema'}
-        _, _, _, Database = __construct_nodes__(db_config)
+        db_config = self._connection.db_isconfig
+        Column, Table, Schema, Database = __construct_nodes__(db_config)
         self._tree = Tree(); self._tree.construct(Database, self._columns)
