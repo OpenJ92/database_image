@@ -30,7 +30,14 @@ class Node(object):
         return _construct_children
 
     @classmethod
-    def _construct_children_(self, __type__, __db__):
+    def __co_init__(cls, _construct_children):
+        def __init__(self, parent, name, data):
+            Node.__init__(self, parent, name)
+            self._children = data.to_dict('list') if not _construct_children else _construct_children(data)
+        return __init__
+
+    @classmethod
+    def _construct_children_(cls, __type__, __db__):
         def _construct_children(data):
             unique_children = data[__db__].unique()
             return \

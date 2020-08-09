@@ -1,0 +1,4 @@
+*.swp
+*.yaml
+**/__pycache__/
+tags
