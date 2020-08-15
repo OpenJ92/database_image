@@ -2,16 +2,20 @@ from src.struct.tree import Node
 
 def __construct_nodes__(__db__):
 
-    cconst = None
-    Column = type('Column', (Node,), {'__init__':Node.__construct_init__(cconst),'_construct_children':cconst})
+    c_children = None
+    c_init = Node.__construct_init__(c_children)
+    Column = type('Column', (Node,), {'__init__':c_init,'_construct_children':c_children})
 
-    tconst = Node.__construct_children__(Column, __db__)
-    Table = type('Table', (Node,), {'__init__':Node.__construct_init__(tconst),'_construct_children':tconst})
+    t_children = Node.__construct_children__(Column, __db__)
+    t_init = Node.__construct_init__(t_children)
+    Table = type('Table', (Node,), {'__init__':t_init,'_construct_children':t_children})
 
-    sconst = Node.__construct_children__(Table, __db__)
-    Schema = type('Schema', (Node,), {'__init__':Node.__construct_init__(sconst),'_construct_children':sconst})
+    s_children = Node.__construct_children__(Table, __db__)
+    s_init = Node.__construct_init__(s_children)
+    Schema = type('Schema', (Node,), {'__init__':s_init,'_construct_children':s_children})
 
-    dconst = Node.__construct_children__(Schema, __db__)
-    Database = type('Database', (Node,), {'__init__':Node.__construct_init__(dconst),'_construct_children':dconst})
+    d_children = Node.__construct_children__(Schema, __db__)
+    d_init = Node.__construct_init__(d_children)
+    Database = type('Database', (Node,), {'__init__':d_init,'_construct_children':d_children})
 
     return Column, Table, Schema, Database
