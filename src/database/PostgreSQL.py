@@ -1,7 +1,8 @@
 from psycopg2 import connect
 from src.connect.Connect import CONNECT
+from src.database.database import database
 
-class PostgresSQL(CONNECT):
+class PostgresSQL(database, CONNECT):
 
     ## Do we want these as class attributes or instance attributes?
     ## with open('src/database/PostgreSQL/information_schema_tree.sql') as query:
