@@ -1,5 +1,6 @@
 from src.connect.dispatcher import connect
 from src.struct.tree import Tree
+from src.struct.graph import Graph
 from src.objects.dynamicnodes import __construct_nodes__
 
 from pandas import read_sql
@@ -16,4 +17,5 @@ class Context(object):
                     read_sql(self._connection.information_schema_graph, conn)
 
         Column, Table, Schema, Database = __construct_nodes__(self._connection)
+
         self._tree = Tree(); self._tree.construct(Database, name, self._columns)

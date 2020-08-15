@@ -3,7 +3,14 @@ from src.connect.Connect import CONNECT
 
 class PostgresSQL(CONNECT):
 
-    db_information_schema_columns = "select * from information_schema.columns"
+    ## Do we want these as class attributes or instance attributes?
+    ## with open('src/database/PostgreSQL/information_schema_tree.sql') as query:
+    ##     information_schema_tree_cls = query.read()
+
+    ## with open('src/database/PostgreSQL/information_schema_graph.sql') as query:
+    ##     information_schema_graph = query.read()
+
+    ## does this belong in a yml file?
     db_isconfig = \
                    {
                            'Column':'column_name',
@@ -12,6 +19,7 @@ class PostgresSQL(CONNECT):
                            'Database':'table_catalog'
                    }
 
+    # Do we want to have a means for the user to supply these restrictions?
     restrict = \
                 {
                         'Column':[],
