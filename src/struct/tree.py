@@ -43,3 +43,10 @@ class Node(object):
 class Tree(object):
     def construct(self, __type__, name, data):
         self._root = __type__(None, name, data)
+
+    def collect_tables(self, node, dictionary):
+        if type(node).__name__ == 'Table':
+            dictionary[node._parent._name + '.' + node._name] = node
+        else:
+            for _, child in node._children.items():
+                self.collect_tables(child, dictionary)

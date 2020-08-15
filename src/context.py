@@ -19,3 +19,5 @@ class Context(object):
         Column, Table, Schema, Database = __construct_nodes__(self._connection)
 
         self._tree = Tree(); self._tree.construct(Database, name, self._columns)
+        tables = {}; self._tree.collect_tables(self._tree._root, tables)
+        self._graph = Graph(); self._graph.construct(tables, self._edges)
