@@ -22,8 +22,8 @@ class Node(object):
         def __init__(self, parent, name, data):
             Node.__init__(self, parent, name)
             self._children = dict(zip(list(data.columns), list(*data.values))) \
-                    if not _construct_children                                 \
-                    else self._construct_children(data)
+                             if not _construct_children                        \
+                             else self._construct_children(data)
         return __init__
 
     @classmethod

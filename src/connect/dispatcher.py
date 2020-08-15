@@ -1,4 +1,4 @@
-from src.connect.PostgreSQL import PostgresSQL
+from src.database.PostgreSQL import PostgresSQL
 
 class connect(object):
     databases =  {
