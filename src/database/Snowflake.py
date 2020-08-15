@@ -1,6 +1,6 @@
 from src.connect.Connect import CONNECT
-from snowflake.connector import connect
 
 class Snowflake(CONNECT):
     def __init__(self, name):
+        from snowflake.connector import connect
         CONNECT.__init__(self, name, connect, config)

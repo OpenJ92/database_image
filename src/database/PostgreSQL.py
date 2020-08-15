@@ -1,5 +1,4 @@
 from src.connect.Connect import CONNECT
-from psycopg2 import connect
 
 class PostgresSQL(CONNECT):
 
@@ -22,4 +21,5 @@ class PostgresSQL(CONNECT):
                 }
 
     def __init__(self, name, config):
+        from psycopg2 import connect
         CONNECT.__init__(self, name, connect, config)
