@@ -10,7 +10,10 @@ class Context(object):
 
         with self._connection as conn:
             self._columns =\
-                    read_sql(self._connection.db_information_schema_columns,conn)
+                    read_sql(self._connection.information_schema_tree,conn)
+
+            self._edges =\
+                    read_sql(self._connection.information_schema_graph, conn)
 
         Column, Table, Schema, Database = __construct_nodes__(self._connection)
         self._tree = Tree(); self._tree.construct(Database, name, self._columns)
