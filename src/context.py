@@ -12,6 +12,5 @@ class Context(object):
             self._columns =\
                     read_sql(self._connection.db_information_schema_columns,conn)
 
-        db_config = self._connection.db_isconfig
-        Column, Table, Schema, Database = __construct_nodes__(db_config)
-        self._tree = Tree(); self._tree.construct(Database, self._columns)
+        Column, Table, Schema, Database = __construct_nodes__(self._connection)
+        self._tree = Tree(); self._tree.construct(Database, name, self._columns)
