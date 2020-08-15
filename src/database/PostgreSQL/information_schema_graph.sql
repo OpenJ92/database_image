@@ -24,6 +24,7 @@ join
 
 where 
 	tco.constraint_type = 'FOREIGN KEY'
+	or tco.constraint_type = 'PRIMARY KEY'
 
 group by 
 	 kcu.table_schema,
