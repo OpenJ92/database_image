@@ -1,8 +1,13 @@
+import enum
+class Color(enum.Enum):
+    black = 0; gray = 1; white = 2;
+
 class Node(object):
-    def __init__(self, parent, name, data = None, information = None):
+    def __init__(self, parent, name, data = None, information = None, color = Color.black):
         self._information = information
         self._name = name
         self._parent = parent
+        self._color = color
         self._children = {}
 
     def __getitem__(self, item):

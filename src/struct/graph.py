@@ -1,12 +1,15 @@
-import enum
-class Color(enum.Enum):
-    black = 0; gray = 1; white = 2;
-
 class GNode(object):
-    def __init__(self, table, column, color = Color.black):
+    def __init__(self, table, column):
         self._table = table
         self._column = column
-        self._color = color
+
+class Adjlists(object):
+    def __init__(self):
+        pass
+
+class Adjlist(object):
+    def __init__(self):
+        pass
 
 class Graph(object):
     def __init__(self):
