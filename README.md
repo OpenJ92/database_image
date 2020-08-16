@@ -5,19 +5,19 @@ This package seeks to construct Tree x Graph structure from queries to informati
 
 [dbm.1](https://github.com/OpenJ92/dbm)
 
-## Database : [src/database](https://github.com/OpenJ92/__dbm__/tree/master/src/database)
+### Database : [src/database](https://github.com/OpenJ92/__dbm__/tree/master/src/database)
 Implementation specific configuration for proper execution of __dbm__. To contribute an implementation, navigate to the above link.
 
-## Context : [src/context](https://github.com/OpenJ92/__dbm__/tree/master/src)
+### Context : [src/context](https://github.com/OpenJ92/__dbm__/tree/master/src)
 Object containing Connection, and executing Database Image. Actions act on a context.
 
-## Connect : [src/connect](https://github.com/OpenJ92/__dbm__/tree/master/src/connect)
+### Connect : [src/connect](https://github.com/OpenJ92/__dbm__/tree/master/src/connect)
 Connection to provided database implementation.
 
-## Structures : [src/struct](https://github.com/OpenJ92/__dbm__/tree/master/src/struct)
+### Structures : [src/struct](https://github.com/OpenJ92/__dbm__/tree/master/src/struct)
 Tree and Graph data structures upon which your database is imaged.
 
-## Objects : [src/objects](https://github.com/OpenJ92/__dbm__/tree/master/src/objects)
+### Objects : [src/objects](https://github.com/OpenJ92/__dbm__/tree/master/src/objects)
 Nodes generated provided the database implementation supplied.
 
 
