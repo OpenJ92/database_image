@@ -5,6 +5,13 @@ This package seeks to construct Tree x Graph structure from queries to informati
 
 ## Usage
 
+Potential usage of dbm from terminal.
+``` bash
+dbm init --config config.file.yml
+dbm inspect --config config.file.yml 
+dbm act --config config.file.yml --action sqlalchemy --target path/to/file/output.py
+```
+
 [dbm.1](https://github.com/OpenJ92/dbm)
 
 ### Database : [src/database](https://github.com/OpenJ92/__dbm__/tree/master/src/database)
