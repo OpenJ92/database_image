@@ -8,3 +8,8 @@ class database(metaclass = ABCMeta):
     @abstractmethod
     def get_information_schema_graph(self):
         pass
+
+    @property
+    @abstractmethod
+    def infoconfig(self):
+        pass
