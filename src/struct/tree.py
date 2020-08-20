@@ -27,24 +27,26 @@ class Node(object):
         return __init__
 
     @classmethod
-    def __construct_children__(cls, __type__, __db__):
+    def __construct_children__(cls, typ, db):
         def _construct_children(self, data):
-            unique_children = data[__db__.db_isconfig[__type__.__name__]].unique()
+            unique_children = data[db.infoconfig[typ.__name__]].unique()
             return \
                     {
                         elmt
                         :
-                        __type__(self, elmt, data[data[__db__.db_isconfig[__type__.__name__]] == elmt])
+                        typ(self, elmt, data[data[db.infoconfig[typ.__name__]] == elmt])
                         for elmt in unique_children
-                        if elmt not in __db__.restrict[__type__.__name__]
+                        if elmt not in db.restrict[typ.__name__]
                     }
         return _construct_children
 
 class Tree(object):
-    def construct(self, __type__, name, data):
-        self._root = __type__(None, name, data)
+    def construct(self, typ, name, data):
+        self._root = typ(None, name, data)
 
-    def collect_tables(self, node, dictionary):
+    def collect_tables(self, node = None, dictionary = {}):
+        if not node: node = self._root
+
         if type(node).__name__ == 'Table':
             dictionary[node._parent._name + '.' + node._name] = node
         else:

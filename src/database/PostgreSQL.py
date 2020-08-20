@@ -12,7 +12,7 @@ class PostgresSQL(database, CONNECT):
     ##     information_schema_graph = query.read()
 
     ## does this belong in a yml file?
-    db_isconfig = \
+    infoconfig = \
                    {
                            'Column':'column_name',
                            'Table':'table_name',

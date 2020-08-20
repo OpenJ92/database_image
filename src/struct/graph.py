@@ -26,4 +26,4 @@ class Graph(object):
                 list(zip(list(data['primary_table']), list(data['foreign_table']), list(data['fk_columns'])))
 
         for prim, fore, key in collect_relations:
-            self._adjlist[tables[prim]].append(GNode(tables[prim], tables[fore][key]))
+            self._adjlist[tables[prim]].append(GNode(tables[fore], tables[fore][key]))
