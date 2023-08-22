@@ -2,6 +2,7 @@ from src.struct.tree import Node
 
 def __construct_nodes__(db):
 
+    ## Move Node function constructors into Factory Class...
     c_children = None
     c_init = Node.__construct_init__(c_children)
     Column = type('Column', (Node,), {'__init__':c_init,'_construct_children':c_children})

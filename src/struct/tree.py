@@ -26,6 +26,7 @@ class Node(object):
                              else self._construct_children(data)
         return __init__
 
+
     @classmethod
     def __construct_children__(cls, typ, db):
         def _construct_children(self, data):
@@ -39,6 +40,7 @@ class Node(object):
                         if elmt not in db.restrict[typ.__name__]
                     }
         return _construct_children
+
 
 class Tree(object):
     def construct(self, typ, name, data):
